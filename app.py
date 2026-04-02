@@ -12,7 +12,14 @@ Original file is located at
 # from openai import AzureOpenAI
 # import os
 
+import streamlit as st
+from openai import AzureOpenAI
 
+api_key = st.secrets["azure"]["api_key"]
+endpoint = st.secrets["azure"]["endpoint"]
+deployment_name = st.secrets["azure"]["deployment_name"]
+
+client = AzureOpenAI(api_key=api_key, azure_endpoint=endpoint, api_version=2025-01-01-preview)
 
 deployment_name = "gpt-4o-mini"
 
